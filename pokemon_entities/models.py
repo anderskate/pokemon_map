@@ -10,7 +10,7 @@ class Pokemon(models.Model):
     next_evolution = models.ForeignKey(
         'self', 
         verbose_name='следующий покемон в эволюции', 
-        on_delete=models.CASCADE, 
+        on_delete=models.SET_NULL, 
         blank=True, 
         null=True
     )
@@ -18,7 +18,7 @@ class Pokemon(models.Model):
         'self', 
         verbose_name='предыдущий покемон в эволюции', 
         related_name='+', 
-        on_delete=models.CASCADE, 
+        on_delete=models.SET_NULL, 
         blank=True, 
         null=True
     )
